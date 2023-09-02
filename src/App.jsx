@@ -5,16 +5,21 @@ import './App.css'
 import Top from "./components/Top";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
+import Cartagena from "./components/Cartagena"
+
+import {Route, Routes} from "react-router-dom"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <Top />
       <Nav />
       <div className='cards-container'>
-        <Header />
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/article/:id" element={<Location />} />
+        </Routes>    
       </div>
     </>
   )

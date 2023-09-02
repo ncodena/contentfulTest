@@ -1,6 +1,8 @@
 // import {Routes, Route, NavLink, Link} from 'react-router-dom';
 import {client} from "../client"
 import {useState, useEffect} from "react";
+import {Link} from "react-router-dom"
+
 
 const Header = () => {
     const [headerContent, setHeaderContent] = useState([]);
@@ -13,7 +15,9 @@ const Header = () => {
             const dataTitle = fields.title;
             const dataDescription = fields.description.content[0].content[0].value;
             const dataImg = fields.img.fields.file.url;
-            const updatedData = {id, dataTitle, dataDescription, dataImg};
+            const dataList = fields.list.content[0].content[0].value;
+            const updatedData = {id, dataTitle, dataDescription, dataImg, dataList};
+            
             return updatedData;
         })
         setHeaderContent(cleanData);
@@ -39,14 +43,17 @@ const Header = () => {
     
     return(
         <>
+
             {(Object.keys(headerContent).length) > 0 ?
                 headerContent.map((article) =>{
                     return (
+                        <Link key={article.id} to={`article/${article.id}`}>
                         <div key={article.id} className="article-container">
                           <h1>{article.dataTitle}</h1>
                           <img src={article.dataImg} className="article-image" alt={article.dataTitle} />
                           {/* <p>{article.dataDescription}</p> */}
                         </div>
+                        </Link>
                       )
                     })
                     : null

@@ -1,4 +1,5 @@
 import {NavLink, Link} from "react-router-dom";
+import Cartagena from "./Cartagena";
 
 
 const Nav = () => {
@@ -15,8 +16,11 @@ const Nav = () => {
                     Valle del Cocora
                 </NavLink>
             </nav>
+
+            
            
         </div>
+
     )
 }
 export default Nav;
