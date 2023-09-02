@@ -13,7 +13,9 @@ function App() {
     <>
       <Top />
       <Nav />
-      <Header />
+      <div className='cards-container'>
+        <Header />
+      </div>
     </>
   )
 }

@@ -4,9 +4,9 @@ import background from "../../media/colombia.jpg";
 const Top = () => {
 
     return(
-        <div>
+        <div className="top">
             <h1><Link to="/">Discovering Colombia</Link></h1>
-            <img src="../../media/colombia.jpg" style={{ width: "100rem", height: "50rem" }}/>
+            {/* <img src="../../media/colombia.jpg" style={{ width: "100rem", height: "50rem" }}/> */}
         </div>
     )
 }
