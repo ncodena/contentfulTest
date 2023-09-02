@@ -40,14 +40,15 @@ const Header = () => {
     return(
         <>
             {(Object.keys(headerContent).length) > 0 ?
-                headerContent.map(() =>(
-                <div key={headerContent.id}> 
-                <h1>{headerContent.dataTitle}</h1>
-                <img src={headerContent.dataImg} style={{width: "600px", height: "300px"}} />
-                {console.log(headerContent.dataImg)}
-                <p>{headerContent.dataDescription}</p>
+                headerContent.map((article) =>{
+                return (
+                <div key={article.id}> 
+                <h1>{article.dataTitle}</h1>
+                <img src={article.dataImg} style={{width: "600px", height: "300px"}} />
+                {console.log(article.dataImg)}
+                <p>{article.dataDescription}</p>
                 </div>
-                ))
+                )})
                 : null
                 }   
         
