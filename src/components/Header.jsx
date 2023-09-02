@@ -1,4 +1,4 @@
-import {Routes, Route, NavLink, Link} from 'react-router-dom';
+// import {Routes, Route, NavLink, Link} from 'react-router-dom';
 import {client} from "../client"
 import {useState, useEffect} from "react";
 
@@ -41,16 +41,16 @@ const Header = () => {
         <>
             {(Object.keys(headerContent).length) > 0 ?
                 headerContent.map((article) =>{
-                return (
-                <div key={article.id}> 
-                <h1>{article.dataTitle}</h1>
-                <img src={article.dataImg} style={{width: "600px", height: "300px"}} />
-                {console.log(article.dataImg)}
-                <p>{article.dataDescription}</p>
-                </div>
-                )})
-                : null
-                }   
+                    return (
+                        <div key={article.id} className="article-container">
+                          <h1>{article.dataTitle}</h1>
+                          <img src={article.dataImg} className="article-image" alt={article.dataTitle} />
+                          {/* <p>{article.dataDescription}</p> */}
+                        </div>
+                      )
+                    })
+                    : null
+            }  
         
         </>
     )
