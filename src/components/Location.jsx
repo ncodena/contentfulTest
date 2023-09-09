@@ -35,9 +35,9 @@ const Location = () => {
                 <h2>{article.title}</h2>
                 <img src={article.img.fields.file.url} className="item-image" alt={article.title} />
                 <p>{article.description.content[0].content[0].value}</p>
-                {article.list.content.map((item) => {
+                {article.list.content.map((item, index) => {
                     return(
-                        <p key={id}>{item.content[0].value}</p>
+                        <p key={index}>{item.content[0].value}</p>
                     )
                  }
 
