@@ -1,5 +1,5 @@
 .headline {
-  color:#9393fb;
+  color:#2b2961;
   
 }
 
@@ -56,4 +56,12 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
 }
