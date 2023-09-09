@@ -18,8 +18,10 @@ function App() {
       <Top />
       <div className='cards-container'>
         <Routes>
-          <Route path="/react-project" element={<Header />} />
-          <Route path="/article/:id" element={<Location />} />
+        <Route path='/react-project'>
+          <Route index element={<Header />} />
+          <Route path="article/:id" element={<Location />} />
+          </Route>
         </Routes>    
       </div>
       </div>
