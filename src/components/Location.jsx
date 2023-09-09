@@ -29,6 +29,7 @@ const Location = () => {
 
     return (
         <>
+        <div className="location-container">
             {(Object.keys(article).length) > 0 ?        
             <div key={id}>
                 <h2>{article.title}</h2>
@@ -44,7 +45,7 @@ const Location = () => {
 
             </div>
                 : null}
-                
+        </div>        
         </>                
     )
 }

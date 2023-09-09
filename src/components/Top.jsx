@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom";
-import background from "../../media/colombia.jpg";
 
 const Top = () => {
 

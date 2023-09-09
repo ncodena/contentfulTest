@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import Top from "./components/Top";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Location from "./components/Location"
 
