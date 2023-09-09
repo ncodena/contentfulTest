@@ -5,7 +5,7 @@ import './App.css'
 import Top from "./components/Top";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
-import Cartagena from "./components/Cartagena"
+import Location from "./components/Location"
 
 import {Route, Routes} from "react-router-dom"
 
@@ -13,13 +13,16 @@ function App() {
 
   return (
     <>
+    <div className="background">
+      <div className='content-layer'>
       <Top />
-      <Nav />
       <div className='cards-container'>
         <Routes>
           <Route path="/" element={<Header />} />
           <Route path="/article/:id" element={<Location />} />
         </Routes>    
+      </div>
+      </div>
       </div>
     </>
   )

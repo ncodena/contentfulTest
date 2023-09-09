@@ -1,3 +1,10 @@
+.headline {
+  color:#9393fb;
+  
+}
+
+
+
 .cards-container {
   display: flex;
   flex-direction: row;
@@ -16,9 +23,10 @@
   width: 200px; 
   box-sizing: border;
   border-radius: 5px;
+  border: 3px solid #646cff; 
 }
 
-.article-container h1 {
+.article-container h2 {
   font-size: 24px;
   color: #646cff;
   margin: 10px 0;
@@ -32,6 +40,11 @@
 
 .article-container p {
   font-size: 16px;
+}
+
+.item-image {
+  max-width: 100%;
+  height: 60%;
 }
 
 #root {

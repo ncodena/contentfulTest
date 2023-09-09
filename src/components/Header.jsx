@@ -26,7 +26,7 @@ const Header = () => {
     const getHeaderContent = async () => {
         try{
             const response= await client.getEntries({ content_type: 'travelBlog' });
-            console.log(response);
+           console.log(response);
             const responseData = response.items;
             cleanUpData(responseData);
             
@@ -39,19 +39,19 @@ const Header = () => {
         getHeaderContent()
     }, [])
 
-    console.log(headerContent);
+    
     
     return(
         <>
-
+    
             {(Object.keys(headerContent).length) > 0 ?
                 headerContent.map((article) =>{
                     return (
                         <Link key={article.id} to={`article/${article.id}`}>
                         <div key={article.id} className="article-container">
-                          <h1>{article.dataTitle}</h1>
+                          <h2>{article.dataTitle}</h2>
                           <img src={article.dataImg} className="article-image" alt={article.dataTitle} />
-                          {/* <p>{article.dataDescription}</p> */}
+                          
                         </div>
                         </Link>
                       )

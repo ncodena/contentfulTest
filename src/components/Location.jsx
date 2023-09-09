@@ -1,32 +1,21 @@
-import {NavLink} from "react-router-dom";
+import {client} from "../client";
 import {useParams} from "react-router-dom"
 import {useState, useEffect} from "react";
 
 const Location = () => {
-    const [article, setArticle] = useState([]);
-     const { id } = useParams();
-
-     const cleanUpData = (rawData) => {
-        const cleanData = rawData.map((data) => {
-            const {sys, fields} = data;
-            const {id} = sys;
-            const dataTitle = fields.title;
-            const dataDescription = fields.description.content[0].content[0].value;
-            const dataImg = fields.img.fields.file.url;
-            const dataList = fields.list.content[0].content[0].value;
-            const updatedData = {id, dataTitle, dataDescription, dataImg, dataList};
-            
-            return updatedData;
-        })
-        setArticle(cleanData);
-    }
+    const [article, setArticle] = useState({});
+    const {id} = useParams();
+    
 
     const getData = async () => {
         try{
-            const response= await client.getEntries({ content_type: 'travelBlog' });
-            console.log(response);
-            const responseData = response.items;
-            cleanUpData(responseData);
+            const response= await client.getEntry(id);
+            console.log(id);
+            const responseData = response.fields;
+            console.log(responseData);
+            setArticle(responseData);
+            
+            
             
         } catch(error){
             console.log(error.message);
@@ -35,17 +24,28 @@ const Location = () => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [id])
 
 
     return (
         <>
-        
-        <div></div>
-                   
+            {(Object.keys(article).length) > 0 ?        
+            <div key={id}>
+                <h2>{article.title}</h2>
+                <img src={article.img.fields.file.url} className="item-image" alt={article.title} />
+                <p>{article.description.content[0].content[0].value}</p>
+                {article.list.content.map((item) => {
+                    return(
+                        <p key={id}>{item.content[0].value}</p>
+                    )
+                 }
+
+                )} 
+
+            </div>
+                : null}
                 
-        
-        </>  
+        </>                
     )
 }
 
